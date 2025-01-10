@@ -1,0 +1,215 @@
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <!-- 첫 번째 계산 영역 -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전체 값에서 일정 비율에 해당하는 값을 계산합니다."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                <EditText
+                        android:id="@+id/input_total_value"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="전체값"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:gravity="center_vertical" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="의" />
+
+                <EditText
+                        android:id="@+id/input_percentage"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="비율값"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/text_result_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="결과 값 : "
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp" android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- 두 번째 계산 영역 -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기준값이 변경값으로 변화시 얼마나 증가/감소했는지 계산합니다."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                <EditText
+                        android:id="@+id/input_base_value"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="기준값"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:gravity="center_vertical" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이(가)" />
+
+                <EditText
+                        android:id="@+id/input_changed_value"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="변경값"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:gravity="center_vertical" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="로 바뀌면" />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/text_result_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="결과 값 : "
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- 세 번째 계산 영역 -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="기준값에서 일정 비율로 증가/감소한 결과를 계산합니다."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" android:id="@+id/textView"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                <EditText
+                        android:id="@+id/input_reference_value"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="기준값"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:gravity="center_vertical" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이(가)" />
+
+                <EditText
+                        android:id="@+id/input_adjust_percentage"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="비율값"
+                        android:inputType="numberDecimal"
+                        android:padding="8dp"
+                        android:gravity="center_vertical" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%" />
+
+                <Spinner
+                        android:id="@+id/dropdown_adjust_operation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:entries="@array/operation_array"
+                        android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/text_result_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="결과 값 : "
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp" android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+        <Button
+                android:id="@+id/button_add_screenshot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스크린샷 추가"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#6200EE"
+                android:textColor="#FFFFFF" />
+
+        <Button
+                android:id="@+id/button_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="초기화"
+                android:backgroundTint="#6200EE"
+                android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</ScrollView>
